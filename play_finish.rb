@@ -2,7 +2,7 @@
 
 require 'open3'
 
-AUDIO_DIR = "~/dev/github.com/chenluLee/claude_hooks"
+AUDIO_DIR = File.expand_path("~/dev/github.com/chenluLee/claude_hooks")
 
 def find_finish_files
   Dir.glob(File.join(AUDIO_DIR, "finish*.mp3"))
@@ -25,8 +25,8 @@ def main
   files = find_finish_files
   
   if files.empty?
-    puts "没有找到finish开头的mp3文件"
-    exit 1
+    # puts "没有找到finish开头的mp3文件"
+    exit 0
   end
   
   selected_file = files.sample

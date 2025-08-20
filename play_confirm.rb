@@ -2,7 +2,7 @@
 
 require 'open3'
 
-AUDIO_DIR = "~/dev/github.com/chenluLee/claude_hooks"
+AUDIO_DIR = File.expand_path("~/dev/github.com/chenluLee/claude_hooks")
 
 def find_confirm_files
   Dir.glob(File.join(AUDIO_DIR, "confirm*.mp3"))
